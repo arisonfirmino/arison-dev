@@ -6,11 +6,23 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
+        main: "var(--main)",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--primary)",
+      },
+      keyframes: {
+        spin: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        spin: "spin 1s linear infinite",
       },
     },
   },

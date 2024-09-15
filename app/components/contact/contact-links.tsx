@@ -1,0 +1,49 @@
+import { Portfolio } from "@prisma/client";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  MailIcon,
+  MessageCircleIcon,
+} from "lucide-react";
+
+interface ContactLinksProps {
+  portfolio: Portfolio;
+}
+
+export default function ContactLinks({ portfolio }: ContactLinksProps) {
+  const link_items = [
+    {
+      name: "Email",
+      icon: <MailIcon size={16} />,
+      href: `mailto:${portfolio.email}`,
+    },
+    {
+      name: "WhatsApp",
+      icon: <MessageCircleIcon size={16} />,
+      href: portfolio.whatsapp,
+    },
+    {
+      name: "linkedIn",
+      icon: <LinkedinIcon size={16} />,
+      href: portfolio.linkedin,
+    },
+    { name: "GitHub", icon: <GithubIcon size={16} />, href: portfolio.github },
+  ];
+
+  return (
+    <div className="relative flex items-center justify-center gap-5 md:justify-end">
+      <hr className="absolute w-full border-black border-opacity-50 dark:border-white dark:border-opacity-10" />
+      {link_items.map((item) => (
+        <a
+          key={item.name}
+          href={item.href}
+          target="_blank"
+          rel="noreferrer"
+          className="z-10 flex h-10 w-10 items-center justify-center rounded-full border border-solid border-black border-opacity-50 bg-main text-foreground duration-500 hover:border-opacity-100 hover:text-black dark:border-white dark:border-opacity-10 dark:hover:border-opacity-100 dark:hover:text-white"
+        >
+          {item.icon}
+        </a>
+      ))}
+    </div>
+  );
+}
