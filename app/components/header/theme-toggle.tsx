@@ -1,18 +1,24 @@
 "use client";
 
 import { MoonIcon, SunIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export default function ThemeToggle() {
-  const [darkMode, setDarkMode] = useState(true);
+interface ThemeToggleProps {
+  darkMode: boolean;
+  setDarkMode: (value: boolean) => void;
+}
 
+export default function ThemeToggle({
+  darkMode,
+  setDarkMode,
+}: ThemeToggleProps) {
   useEffect(() => {
     const theme = localStorage.getItem("theme");
 
     if (theme === "dark") {
       setDarkMode(true);
     }
-  }, []);
+  }, [setDarkMode]);
 
   useEffect(() => {
     if (darkMode) {

@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import Nav from "./nav";
 import ThemeToggle from "./theme-toggle";
-import Picture from "../picture";
+import Image from "next/image";
 
 export default function Header() {
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,9 +29,15 @@ export default function Header() {
     <header
       className={`fixed top-0 z-20 flex w-full items-center justify-between border-solid border-black border-opacity-10 bg-main p-5 dark:border-white dark:border-opacity-10 md:justify-between ${hasScrolled ? "border-b" : ""}`}
     >
-      <Picture className="hidden h-10 w-10 md:flex" />
+      <Image
+        src={darkMode ? "/darkMode-logo.png" : "/lightMode-logo.png"}
+        alt="Logo"
+        height={396}
+        width={396}
+        className="hidden w-10 md:flex"
+      />
       <Nav />
-      <ThemeToggle />
+      <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
     </header>
   );
 }

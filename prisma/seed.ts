@@ -13,7 +13,7 @@ async function main() {
       github: "https://github.com/arisonfirmino",
       whatsapp: "https://wa.me/14998794845",
       resume:
-        "https://drive.google.com/file/d/1aAO2LGNG-xlLXZR9QPCCv8_oOD3jbEDP/view",
+        "https://drive.google.com/file/d/1UG9FvmjjycJT4h-VOqevduLuglOjhWqi/view?usp=sharing",
       about_me:
         "<p>Meu nome é <i>Arison Firmino</i>, tenho <i>23 anos</i>. Tive meu primeiro contato com programação em 2023 e, desde então, venho estudando de forma autodidata. Durante esse período, me aprofundei no desenvolvimento web frontend, adquirindo habilidades em <i>HTML</i>, <i>CSS</i>, <i>JavaScript</i> e <i>TypeScript</i>, além de frameworks como <i>ReactJS</i> e <i>Next.js</i>.<p/> <p>Além do frontend, explorei também o backend, adquirindo habilidades em <i>Node.js</i> e em bancos de dados relacionais, como <i>PostgreSQL</i>, e não relacionais, como <i>MongoDB</i>.</p>",
       more_about_me:
