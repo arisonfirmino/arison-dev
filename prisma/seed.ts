@@ -28,7 +28,30 @@ async function main() {
         "Uma rede social onde você compartilha ideias e interage com uma comunidade online.",
       repo: "https://github.com/arisonfirmino/text.fy",
       deploy: "https://text-fy.vercel.app",
-      tags: ["typescript", "nextjs", "prisma", "mongodb", "tailwindcss"],
+      tags: [
+        "typescript",
+        "nextjs",
+        "prisma",
+        "mongodb",
+        "tailwindcss",
+        "nextauth",
+      ],
+      portfolioId: portfolio.id,
+    },
+    {
+      name: "sendify",
+      description:
+        "Aplicação web de e-mail para cadastro e envio de mensagens de forma simples e intuitiva.",
+      repo: "https://github.com/arisonfirmino/sendify",
+      deploy: "https://sendify-six.vercel.app",
+      tags: [
+        "typescript",
+        "nextjs",
+        "prisma",
+        "mongodb",
+        "tailwindcss",
+        "nextauth",
+      ],
       portfolioId: portfolio.id,
     },
     {
@@ -44,6 +67,7 @@ async function main() {
         "postgresql",
         "supabase",
         "tailwindcss",
+        "nextauth",
       ],
       portfolioId: portfolio.id,
     },
@@ -60,6 +84,7 @@ async function main() {
         "postgresql",
         "supabase",
         "tailwindcss",
+        "nextauth",
       ],
       portfolioId: portfolio.id,
     },
@@ -69,7 +94,14 @@ async function main() {
         "Projeto de cardápio digital para hamburgueria com pedidos via app.",
       repo: "https://github.com/arisonfirmino/the-burger-lab",
       deploy: "https://the-burger-lab.vercel.app",
-      tags: ["typescript", "nextjs", "prisma", "mongodb", "tailwindcss"],
+      tags: [
+        "typescript",
+        "nextjs",
+        "prisma",
+        "mongodb",
+        "tailwindcss",
+        "nextauth",
+      ],
       portfolioId: portfolio.id,
     },
   ];
@@ -232,6 +264,22 @@ async function main() {
       portfolioId: portfolio.id,
     },
     {
+      name: "Prisma",
+      type: "library",
+      svg: `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_366_4)">
+                <path d="M18.1725 15.2375L11.2942 0.630844C11.2091 0.450561 11.0766 0.296791 10.9109 0.185972C10.7452 0.0751532 10.5525 0.0114517 10.3533 0.00167731C10.1541 -0.0115795 9.95511 0.0300446 9.77792 0.122022C9.60072 0.213998 9.45214 0.352806 9.34834 0.523344L1.88834 12.6067C1.77551 12.7893 1.71685 13.0002 1.71922 13.2149C1.72158 13.4295 1.78485 13.6391 1.90168 13.8192L5.54834 19.4675C5.68656 19.6791 5.88931 19.8404 6.12649 19.9277C6.36368 20.0149 6.62266 20.0233 6.86501 19.9517L17.4508 16.8208C17.775 16.725 18.04 16.4958 18.1783 16.1917C18.3167 15.8875 18.315 15.5392 18.1725 15.2375ZM16.6325 15.8642L7.65001 18.52C7.58777 18.5389 7.52169 18.5414 7.4582 18.5272C7.39471 18.5131 7.33598 18.4827 7.28773 18.439C7.23947 18.3954 7.20335 18.34 7.18286 18.2782C7.16238 18.2165 7.15824 18.1505 7.17084 18.0867L10.3792 2.72168C10.4392 2.43418 10.8367 2.38834 10.9617 2.65501L16.9025 15.27C16.9288 15.3263 16.9425 15.3875 16.9428 15.4496C16.9431 15.5117 16.9299 15.5731 16.9041 15.6296C16.8784 15.686 16.8407 15.7363 16.7937 15.7768C16.7466 15.8173 16.6922 15.8471 16.6325 15.8642Z" fill="currentColor"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_366_4">
+                  <rect width="20" height="20" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>`,
+      color: "#2D3748",
+      portfolioId: portfolio.id,
+    },
+    {
       name: "React Hook Form",
       type: "library",
       svg: `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -270,22 +318,6 @@ async function main() {
               </defs>
             </svg>`,
       color: "#770C56",
-      portfolioId: portfolio.id,
-    },
-    {
-      name: "Framer Motion",
-      type: "library",
-      svg: `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_324_105)">
-                <path d="M3.33334 0H16.6667V6.66667H10L3.33334 0ZM3.33334 6.66667H10L16.6667 13.3333H3.33334V6.66667ZM3.33334 13.3333H10V20L3.33334 13.3333Z" fill="currentColor"/>
-              </g>
-              <defs>
-                <clipPath id="clip0_324_105">
-                  <rect width="20" height="20" fill="white"/>
-                </clipPath>
-              </defs>
-            </svg>`,
-      color: "#0055FF",
       portfolioId: portfolio.id,
     },
     {
