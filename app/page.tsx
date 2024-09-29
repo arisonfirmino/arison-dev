@@ -6,10 +6,12 @@ import ContactList from "./components/contact/contact-list";
 import IntroduceList from "./components/introduce/introduce-list";
 import Header from "./components/header/header";
 import StackList from "./components/stack/stack-list";
+import TimelineList from "./components/timeline/timeline-list";
 
 const fetch = async () => {
   const getPortfolioData = await db.portfolio.findMany({
     include: {
+      timeline: true,
       projects: true,
       skills: true,
     },
@@ -30,6 +32,9 @@ export default async function Home() {
       <div className="max-w-3xl space-y-20 px-5 lg:px-0">
         <IntroduceList portfolio={portfolio} />
         <AboutList portfolio={portfolio} />
+        <div className="hidden">
+          <TimelineList timeline={portfolio.timeline} />
+        </div>
         <ProjectList projects={portfolio.projects} />
         <StackList skills={portfolio.skills} />
         <ContactList portfolio={portfolio} />

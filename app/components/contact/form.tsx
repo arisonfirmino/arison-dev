@@ -8,7 +8,7 @@ import { AsteriskIcon } from "lucide-react";
 import Input from "./input";
 import SendButton from "./send-button";
 import emailjs from "@emailjs/browser";
-import Sonner from "./sonner";
+import { motion } from "framer-motion";
 
 const schema = yup.object({
   name: yup
@@ -25,15 +25,18 @@ const schema = yup.object({
     .min(3, "Este campo precisa ter pelo menos 3 caracteres."),
 });
 
+interface FormProps {
+  setShowSonner: (value: boolean) => void;
+}
+
 interface FormData {
   name: string;
   email: string;
   message: string;
 }
 
-export default function Form() {
+export default function Form({ setShowSonner }: FormProps) {
   const [isLoading, setIsLoading] = useState(false);
-  const [showSonner, setShowSonner] = useState(false);
 
   const {
     register,
@@ -70,7 +73,14 @@ export default function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+    <motion.form
+      initial={{ opacity: 0, y: 150 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 150 }}
+      transition={{ duration: 0.5 }}
+      onSubmit={handleSubmit(onSubmit)}
+      className="space-y-5"
+    >
       <div className="flex flex-col gap-5 md:flex-row">
         <Input
           label="Nome completo"
@@ -104,8 +114,6 @@ export default function Form() {
       </div>
 
       <SendButton isLoading={isLoading} />
-
-      {showSonner && <Sonner />}
-    </form>
+    </motion.form>
   );
 }

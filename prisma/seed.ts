@@ -1,4 +1,4 @@
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -108,6 +108,34 @@ async function main() {
 
   await prisma.project.createMany({
     data: projects,
+  });
+
+  const timeline = [
+    {
+      title: "Bach. em Ciência da Computação",
+      location: "UNIMAR - Universidade de Marília",
+      date: "2025 - Presente",
+      type: "education",
+      portfolioId: portfolio.id,
+    },
+    {
+      title: "Ensino Médio Completo",
+      location: "EE José Bonifácio do Couto",
+      date: "2018",
+      type: "education",
+      portfolioId: portfolio.id,
+    },
+    {
+      title: "Desenvolvedor Fullstack",
+      location: "Google",
+      date: "2025 - Presente",
+      type: "experience",
+      portfolioId: portfolio.id,
+    },
+  ];
+
+  await prisma.timeline.createMany({
+    data: timeline,
   });
 
   const skills = [

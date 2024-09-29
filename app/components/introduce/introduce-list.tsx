@@ -1,7 +1,10 @@
+"use client";
+
 import { Portfolio } from "@prisma/client";
 import ResumeLink from "./resume-link";
 import { MoveUpRightIcon } from "lucide-react";
 import Picture from "../picture";
+import { motion } from "framer-motion";
 
 interface IntroduceListProps {
   portfolio: Portfolio;
@@ -15,16 +18,43 @@ export default function IntroduceList({ portfolio }: IntroduceListProps) {
 
   return (
     <div id="home" className="space-y-5">
-      <Picture className="h-20 w-20" />
+      <motion.div
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 150 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Picture className="h-20 w-20" />
+      </motion.div>
 
-      <p className="brygada-1918 text-2xl font-medium">
+      <motion.p
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 150 }}
+        transition={{ duration: 0.5 }}
+        className="brygada-1918 text-2xl font-medium"
+      >
         Embarcando em uma jornada de aprendizado na programação, buscando
         transformar ideias em soluções práticas.
-      </p>
+      </motion.p>
 
-      <p className="text-base text-foreground">{portfolio.bio}</p>
+      <motion.p
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 150 }}
+        transition={{ duration: 0.5 }}
+        className="text-base text-foreground"
+      >
+        {portfolio.bio}
+      </motion.p>
 
-      <div className="flex items-center justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 150 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center justify-between"
+      >
         <ResumeLink resume={portfolio.resume} />
 
         <div className="flex items-center gap-5">
@@ -40,7 +70,7 @@ export default function IntroduceList({ portfolio }: IntroduceListProps) {
             </a>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

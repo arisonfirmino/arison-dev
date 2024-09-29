@@ -5,6 +5,7 @@ import { Project } from "@prisma/client";
 import ProjectItem from "./project-item";
 import Title from "../title";
 import SearchProject from "./search-project";
+import { motion } from "framer-motion";
 
 interface ProjectListProps {
   projects: Project[];
@@ -25,18 +26,30 @@ export default function ProjectList({ projects }: ProjectListProps) {
     <div id="projects" className="space-y-5">
       <Title>Projetos</Title>
 
-      <p className="text-sm text-foreground">
+      <motion.p
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 150 }}
+        transition={{ duration: 0.5 }}
+        className="text-sm text-foreground"
+      >
         Confira a lista dos{" "}
         <span className="font-medium text-black dark:text-white">
           {projects.length}
         </span>{" "}
         principais projetos que venho desenvolvendo durante a minha jornada como
         programador.
-      </p>
+      </motion.p>
 
       <SearchProject onSearch={handleSearch} />
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <motion.div
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 150 }}
+        transition={{ duration: 0.5 }}
+        className="grid grid-cols-1 gap-5 md:grid-cols-2"
+      >
         {filteredProjects.map((project) => (
           <a
             key={project.id}
@@ -47,7 +60,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
             <ProjectItem project={project} />
           </a>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

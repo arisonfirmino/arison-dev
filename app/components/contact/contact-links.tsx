@@ -1,3 +1,5 @@
+"use client";
+
 import { Portfolio } from "@prisma/client";
 import {
   GithubIcon,
@@ -5,6 +7,7 @@ import {
   MailIcon,
   MessageCircleIcon,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ContactLinksProps {
   portfolio: Portfolio;
@@ -31,7 +34,13 @@ export default function ContactLinks({ portfolio }: ContactLinksProps) {
   ];
 
   return (
-    <div className="relative flex items-center justify-center gap-5 md:justify-end">
+    <motion.div
+      initial={{ opacity: 0, y: 150 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 150 }}
+      transition={{ duration: 0.5 }}
+      className="relative flex items-center justify-center gap-5 md:justify-end"
+    >
       <hr className="absolute w-full border-black border-opacity-50 dark:border-white dark:border-opacity-10" />
       {link_items.map((item) => (
         <a
@@ -44,6 +53,6 @@ export default function ContactLinks({ portfolio }: ContactLinksProps) {
           {item.icon}
         </a>
       ))}
-    </div>
+    </motion.div>
   );
 }

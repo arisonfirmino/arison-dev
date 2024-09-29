@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Portfolio {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  id            String     @id @default(auto()) @map("_id") @db.ObjectId
   name          String
   lastName      String
   email         String
@@ -19,6 +19,7 @@ model Portfolio {
   resume        String
   about_me      String
   more_about_me String
+  timeline      Timeline[]
   projects      Project[]
   skills        Skill[]
 
@@ -48,4 +49,16 @@ model Skill {
   portfolioId String    @db.ObjectId
 
   @@map("skills")
+}
+
+model Timeline {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  location    String
+  date        String
+  type        String
+  portfolio   Portfolio @relation(fields: [portfolioId], references: [id])
+  portfolioId String    @db.ObjectId
+
+  @@map("timeline")
 }
