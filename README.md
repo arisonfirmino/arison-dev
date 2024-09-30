@@ -1,4 +1,12 @@
+![Preview](https://utfs.io/f/FJxfrM1suimWBg0nKVfQOaMCoWpYiN1l7g3bS8dIGsfL56n9)
+
 > Criei este portfólio para apresentar meus principais projetos, habilidades e conquistas adquiridas ao longo do meu período de aprendizado em programação.
+
+## Sumário
+1. [SOBRE O PROJETO](#sobre-o-projeto)
+2. [APRENDIZADOS DURANTE O DESENVOLVIMENTO](#aprendizados-durante-o-desenvolvimento)
+3. [DEPLOY E DEMONSTRAÇÃO](#deploy-e-demonstração)
+4. [LICENÇA](#licença)
 
 ## SOBRE O PROJETO
 
@@ -27,3 +35,19 @@ Optei por utilizar o **Tailwind CSS** para a estilização do projeto, uma bibli
 Além das tecnologias mencionadas, utilizei algumas bibliotecas, como o **Lucide React**, para adicionar ícones em diversas partes do projeto. O **React Hook Form** facilitou e tornou o processo de validação do formulário da seção de contato mais eficiente. Para o envio desse formulário, utilizei o serviço **EmailJS**, que permite que as mensagens sejam enviadas diretamente para o meu e-mail.
 
 Para tornar a aplicação mais intuitiva e agradável, adicionei animações a alguns componentes durante o scroll da página, utilizando a biblioteca **Framer Motion**.
+
+## APRENDIZADOS DURANTE O DESENVOLVIMENTO
+
+O desenvolvimento deste portfólio me proporcionou a oportunidade de consolidar meu conhecimento nas tecnologias com as quais já estou familiarizado.
+
+No entanto, o processo também foi essencial para aprimorar minhas habilidades, especialmente na integração entre componentes do lado do servidor e do cliente usando **Next.js**. Esta foi uma área que comecei a explorar mais recentemente, e o projeto permitiu que eu aprofundasse meu entendimento sobre como essas duas partes podem trabalhar juntas de forma eficiente e harmônica.
+
+## DEPLOY E DEMONSTRAÇÃO
+
+O portfólio está disponível online e pode ser acessado pelo seguinte link:
+
+[Link para o portfólio](https://arison-dev.vercel.app).
+
+## LICENÇA
+
+Este projeto está licenciado sob a [Licença MIT](https://opensource.org/license/mit).
